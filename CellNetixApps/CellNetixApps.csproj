@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{423E55B5-50DF-4BCE-A793-76FABFDA17A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CellNetixApps</RootNamespace>
+    <AssemblyName>CellNetixApps</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\cel-fil-001\software\Custom_Apps\CellNetixApps\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cellnetix32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6C338A236F6275B9CA3EBB380E916521A2FFA269</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CellNetixApps_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="ClearImageNet.70, Version=7.0.0.0, Culture=neutral, PublicKeyToken=71e5888be264aae0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Inlite\ClearImage 7 SDK\ClearImageNet.70.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.BonusSkins.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.Data.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.Printing.v12.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.Utils.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.XtraBars.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.XtraEditors.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.XtraGrid.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.XtraLayout.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevExpress.XtraNavBar.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="idautomation.datamatrix">
+      <HintPath>\\cel-fil-001\software\IDAutomation\IDAutomation\IDAutomation_DataMatrixFontEncoder\Dotnet DLL and Forms Control\idautomation.datamatrix.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera\GdiPlusLib.cs" />
+    <Compile Include="Camera\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\PicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\TwainDefs.cs" />
+    <Compile Include="Camera\TwainLib.cs" />
+    <Compile Include="CELLAPPSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CELLAPPSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Acc\cAccCif.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccCif.Designer.cs">
+      <DependentUpon>cAccCif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccPatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccPatient.Designer.cs">
+      <DependentUpon>cAccPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccRefMD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccRefMD.Designer.cs">
+      <DependentUpon>cAccRefMD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccSidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccSidebar.Designer.cs">
+      <DependentUpon>cAccSidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccSpecimen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccSpecimen.Designer.cs">
+      <DependentUpon>cAccSpecimen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccCaseType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccCaseType.Designer.cs">
+      <DependentUpon>cAccCaseType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccReqData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccReqData.Designer.cs">
+      <DependentUpon>cAccReqData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccValidation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccValidation.Designer.cs">
+      <DependentUpon>cAccValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccPrint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccPrint.Designer.cs">
+      <DependentUpon>cAccPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccScan.Designer.cs">
+      <DependentUpon>cAccScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cAccOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\cAccOrder.Designer.cs">
+      <DependentUpon>cAccOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\cPrint.cs" />
+    <Compile Include="Source\Acc\frmAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Acc\frmAcc.Designer.cs">
+      <DependentUpon>frmAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Acc\iAcc.cs" />
+    <Compile Include="Source\Block Print\frmBlockPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Block Print\frmBlockPrint.Designer.cs">
+      <DependentUpon>frmBlockPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Classes\cExtensions.cs" />
+    <Compile Include="Source\Classes\cNetworkListener.cs" />
+    <Compile Include="Source\Classes\Dynamic.cs" />
+    <Compile Include="Source\Classes\ModifyRegistry.cs" />
+    <Compile Include="Source\Classes\TouchScroller.cs" />
+    <Compile Include="Source\Classes\TouchScrollHelper.cs" />
+    <Compile Include="Source\Classes\cMethods.cs" />
+    <Compile Include="Source\Classes\cProperties.cs" />
+    <Compile Include="Source\Classes\CrystalReport.cs" />
+    <Compile Include="Source\Classes\Enums.cs" />
+    <Compile Include="Source\Classes\ProximityReader.cs" />
+    <Compile Include="RFIDeas_pcProxAPI.cs" />
+    <Compile Include="Source\Classes\SP.cs" />
+    <Compile Include="Source\Controls\c10key.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\c10key.Designer.cs">
+      <DependentUpon>c10key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cConference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cConference.Designer.cs">
+      <DependentUpon>cConference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cConsult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cConsult.Designer.cs">
+      <DependentUpon>cConsult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cGrid.Designer.cs">
+      <DependentUpon>cGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cKeypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cKeypad.Designer.cs">
+      <DependentUpon>cKeypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cScreenShare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cScreenShare.Designer.cs">
+      <DependentUpon>cScreenShare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\cWebsite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\cWebsite.Designer.cs">
+      <DependentUpon>cWebsite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Database\Cellapps.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cellapps.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Database\PowerPath.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PowerPath.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Database\Rules.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rules.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Database\Tools.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tools.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Distribute\frmDistribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Distribute\frmDistribute.Designer.cs">
+      <DependentUpon>frmDistribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Distribute\frmManualDistribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Distribute\frmManualDistribute.Designer.cs">
+      <DependentUpon>frmManualDistribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Distribute\frmPrintTray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Distribute\frmPrintTray.Designer.cs">
+      <DependentUpon>frmPrintTray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmAllSlides.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmAllSlides.Designer.cs">
+      <DependentUpon>frmAllSlides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmCaseNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmCaseNotes.Designer.cs">
+      <DependentUpon>frmCaseNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmCut.Designer.cs">
+      <DependentUpon>frmCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmEditLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmEditLevels.Designer.cs">
+      <DependentUpon>frmEditLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmEmbed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmEmbed.Designer.cs">
+      <DependentUpon>frmEmbed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmSearchableAddSlides.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmSearchableAddSlides.Designer.cs">
+      <DependentUpon>frmSearchableAddSlides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmSimplePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmSimplePopup.Designer.cs">
+      <DependentUpon>frmSimplePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Lab\frmOrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Lab\frmOrderHistory.Designer.cs">
+      <DependentUpon>frmOrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Lab\frmWorklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Lab\frmWorklist.Designer.cs">
+      <DependentUpon>frmWorklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Lab\frmWorklistSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Lab\frmWorklistSettings.Designer.cs">
+      <DependentUpon>frmWorklistSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Login and General\frmSearchableSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Login and General\frmSearchableSelection.Designer.cs">
+      <DependentUpon>frmSearchableSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPhone.Designer.cs">
+      <DependentUpon>frmPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmScanBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmScanBarcode.Designer.cs">
+      <DependentUpon>frmScanBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Login and General\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Login and General\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Embed and Cut\frmDialog.Designer.cs">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Login and General\frmMultiSelectionPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Login and General\frmMultiSelectionPopup.Designer.cs">
+      <DependentUpon>frmMultiSelectionPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Login and General\frmTextEnteringPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Login and General\frmTextEnteringPopup.Designer.cs">
+      <DependentUpon>frmTextEnteringPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmEditImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmEditImage.Designer.cs" />
+    <Compile Include="Source\Path\Forms\frmKeypad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmKeypad.Designer.cs">
+      <DependentUpon>frmKeypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPath.Designer.cs">
+      <DependentUpon>frmPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPopup.Designer.cs" />
+    <Compile Include="Source\Path\Forms\frmPopupInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmPopupInput.Designer.cs">
+      <DependentUpon>frmPopupInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmScreen.Designer.cs">
+      <DependentUpon>frmScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Path\Forms\frmTemplate.Designer.cs">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Rules\frmRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Rules\frmRule.Designer.cs">
+      <DependentUpon>frmRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Tickets\frmRecentTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Tickets\frmRecentTickets.Designer.cs">
+      <DependentUpon>frmRecentTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Tickets\frmTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Tickets\frmTicket.Designer.cs">
+      <DependentUpon>frmTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Tickets\frmTicketMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Tickets\frmTicketMainMenu.Designer.cs">
+      <DependentUpon>frmTicketMainMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Source\Acc\cAccCif.resx">
+      <DependentUpon>cAccCif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccPatient.resx">
+      <DependentUpon>cAccPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccRefMD.resx">
+      <DependentUpon>cAccRefMD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccSidebar.resx">
+      <DependentUpon>cAccSidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccSpecimen.resx">
+      <DependentUpon>cAccSpecimen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccCaseType.resx">
+      <DependentUpon>cAccCaseType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccReqData.resx">
+      <DependentUpon>cAccReqData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccValidation.resx">
+      <DependentUpon>cAccValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccPrint.resx">
+      <DependentUpon>cAccPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccScan.resx">
+      <DependentUpon>cAccScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\cAccOrder.resx">
+      <DependentUpon>cAccOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Acc\frmAcc.resx">
+      <DependentUpon>frmAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Block Print\frmBlockPrint.resx">
+      <DependentUpon>frmBlockPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\c10key.resx">
+      <DependentUpon>c10key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cConference.resx">
+      <DependentUpon>cConference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cConsult.resx">
+      <DependentUpon>cConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cGrid.resx">
+      <DependentUpon>cGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cKeypad.resx">
+      <DependentUpon>cKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cScreenShare.resx">
+      <DependentUpon>cScreenShare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\cWebsite.resx">
+      <DependentUpon>cWebsite.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Source\Database\Rules.dbml.layout">
+      <DependentUpon>Rules.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Source\Distribute\frmDistribute.resx">
+      <DependentUpon>frmDistribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Distribute\frmManualDistribute.resx">
+      <DependentUpon>frmManualDistribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Distribute\frmPrintTray.resx">
+      <DependentUpon>frmPrintTray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmAllSlides.resx">
+      <DependentUpon>frmAllSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmCaseNotes.resx">
+      <DependentUpon>frmCaseNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmCut.resx">
+      <DependentUpon>frmCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmEditLevels.resx">
+      <DependentUpon>frmEditLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmSearchableAddSlides.resx">
+      <DependentUpon>frmSearchableAddSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Embed and Cut\frmSimplePopup.resx">
+      <DependentUpon>frmSimplePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Lab\frmOrderHistory.resx">
+      <DependentUpon>frmOrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Lab\frmWorklist.resx">
+      <DependentUpon>frmWorklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Lab\frmWorklistSettings.resx">
+      <DependentUpon>frmWorklistSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Login and General\frmSearchableSelection.resx">
+      <DependentUpon>frmSearchableSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmPhone.resx">
+      <DependentUpon>frmPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmScanBarcode.resx">
+      <DependentUpon>frmScanBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Login and General\frmMultiSelectionPopup.resx">
+      <DependentUpon>frmMultiSelectionPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Login and General\frmTextEnteringPopup.resx">
+      <DependentUpon>frmTextEnteringPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmEditImage.resx" />
+    <EmbeddedResource Include="Source\Path\Forms\frmKeypad.resx">
+      <DependentUpon>frmKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmPopup.resx" />
+    <EmbeddedResource Include="Source\Path\Forms\frmPopupInput.resx">
+      <DependentUpon>frmPopupInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmScreen.resx">
+      <DependentUpon>frmScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmTemplate.resx">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Rules\frmRule.resx">
+      <DependentUpon>frmRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Tickets\frmRecentTickets.resx">
+      <DependentUpon>frmRecentTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Tickets\frmTicket.resx">
+      <DependentUpon>frmTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Tickets\frmTicketMainMenu.resx">
+      <DependentUpon>frmTicketMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\CellNetixApps.exe.config" />
+    <None Include="bin\Debug\CellNetixApps.vshost.exe.config" />
+    <None Include="bin\Debug\CellNetixApps.vshost.exe.manifest" />
+    <None Include="bin\Release\CellNetixApps.exe.config" />
+    <None Include="bin\Release\CellNetixApps.vshost.exe.config" />
+    <None Include="bin\Release\CellNetixApps.vshost.exe.manifest" />
+    <None Include="CELLAPPSDataSet.xsc">
+      <DependentUpon>CELLAPPSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CELLAPPSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CELLAPPSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CELLAPPSDataSet.xss">
+      <DependentUpon>CELLAPPSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CellNetixApps_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\SlideLabel.rpt" />
+    <None Include="Source\Database\Cellapps.dbml.layout">
+      <DependentUpon>Cellapps.dbml</DependentUpon>
+    </None>
+    <None Include="Source\Database\PowerPath.dbml.layout">
+      <DependentUpon>PowerPath.dbml</DependentUpon>
+    </None>
+    <None Include="Source\Database\Rules.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Rules.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Database\Tools.dbml.layout">
+      <DependentUpon>Tools.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Source\Embed and Cut\frmEmbed.resx">
+      <DependentUpon>frmEmbed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Login and General\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Path\Forms\frmPath.resx">
+      <DependentUpon>frmPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Source\Database\Cellapps.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Cellapps.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Database\PowerPath.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PowerPath.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Database\Tools.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Tools.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basecircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favs.addto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overflowdots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\auto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CellNetixApps.exe" />
+    <Content Include="bin\Debug\CellNetixApps.pdb" />
+    <Content Include="bin\Debug\CellNetixApps.vshost.exe" />
+    <Content Include="bin\Release\CellNetixApps.exe" />
+    <Content Include="bin\Release\CellNetixApps.pdb" />
+    <Content Include="bin\Release\CellNetixApps.vshost.exe" />
+    <Content Include="bin\Release\DevExpress.BonusSkins.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.Data.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.Printing.v12.1.Core.dll" />
+    <Content Include="bin\Release\DevExpress.Utils.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.XtraBars.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.XtraEditors.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.XtraGrid.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.XtraLayout.v12.1.dll" />
+    <Content Include="bin\Release\DevExpress.XtraNavBar.v12.1.dll" />
+    <Content Include="bin\Release\idautomation.datamatrix.dll" />
+    <Content Include="bin\Release\pcProxAPI.dll" />
+    <Content Include="cellnetix.ico" />
+    <Content Include="cellnetix32.ico" />
+    <Content Include="Images\Calendar_16x16.png" />
+    <Content Include="Images\Drafts_16x16.png" />
+    <Content Include="Images\Inbox_16x16.png" />
+    <Content Include="Images\Mail_16x16.png" />
+    <Content Include="Images\Organizer_16x16.png" />
+    <Content Include="Images\Outbox_16x16.png" />
+    <Content Include="Images\Ribbon_AlignCenter_16x16.png" />
+    <Content Include="Images\Ribbon_AlignLeft_16x16.png" />
+    <Content Include="Images\Ribbon_AlignRight_16x16.png" />
+    <Content Include="Images\Ribbon_Bold_16x16.png" />
+    <Content Include="Images\Ribbon_Close_16x16.png" />
+    <Content Include="Images\Ribbon_Close_32x32.png" />
+    <Content Include="Images\Ribbon_Content_16x16.png" />
+    <Content Include="Images\Ribbon_Content_32x32.png" />
+    <Content Include="Images\Ribbon_Exit_16x16.png" />
+    <Content Include="Images\Ribbon_Exit_32x32.png" />
+    <Content Include="Images\Ribbon_Find_16x16.png" />
+    <Content Include="Images\Ribbon_Find_32x32.png" />
+    <Content Include="Images\Ribbon_Info_16x16.png" />
+    <Content Include="Images\Ribbon_Info_32x32.png" />
+    <Content Include="Images\Ribbon_Italic_16x16.png" />
+    <Content Include="Images\Ribbon_New_16x16.png" />
+    <Content Include="Images\Ribbon_New_32x32.png" />
+    <Content Include="Images\Ribbon_Open_16x16.png" />
+    <Content Include="Images\Ribbon_Open_32x32.png" />
+    <Content Include="Images\Ribbon_SaveAs_16x16.png" />
+    <Content Include="Images\Ribbon_SaveAs_32x32.png" />
+    <Content Include="Images\Ribbon_Save_16x16.png" />
+    <Content Include="Images\Ribbon_Save_32x32.png" />
+    <Content Include="Images\Ribbon_Underline_16x16.png" />
+    <Content Include="Images\Tasks_16x16.png" />
+    <Content Include="Images\Trash_16x16.png" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Source.Database.Cellapps.designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Source.Database.PowerPath.designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Source.Database.Tools.designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\Source.Database.Cellapps.designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\Source.Database.PowerPath.designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\Source.Database.Tools.designer.cs.dll" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\Document.png" />
+    <None Include="Resources\reportprinter.png" />
+    <None Include="Resources\NewFilter.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\Sort.png" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\working.png" />
+    <None Include="Resources\New.png" />
+    <None Include="Resources\InProcess.png" />
+    <None Include="Resources\Complete.png" />
+    <None Include="Resources\chemistry.png" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\UpArrow.png" />
+    <None Include="Resources\DownArrow.png" />
+    <None Include="Resources\siren.gif" />
+    <None Include="Resources\logoutblue.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\Keyboard.png" />
+    <None Include="Resources\Truck.png" />
+    <None Include="Resources\Garbage.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\Building.png" />
+    <None Include="Resources\Microscope.png" />
+    <None Include="Resources\Ship.png" />
+    <None Include="Resources\slide.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Log\" />
+    <Folder Include="bin\Release\Log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxRDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.PowerPoint">
+      <Guid>{91493440-5A91-11CF-8700-00AA0060263B}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>10</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

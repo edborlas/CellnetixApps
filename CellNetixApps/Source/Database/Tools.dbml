@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tools" Class="ToolsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CEL-LIS-001;Initial Catalog=tools;Persist Security Info=True;User ID=sa" SettingsObjectName="CellNetixApps.Properties.Settings" SettingsPropertyName="tools_testConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.SP_PP_Get_Case_Details" Method="SP_PP_Get_Case_Details">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Case_DetailsResult">
+      <Column Name="[Accession Number]" Member="Accession_Number" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Case Priority]" Member="Case_Priority" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="[Revenue Center]" Member="Revenue_Center" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="[Primary Referring Physician]" Member="Primary_Referring_Physician" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Facility" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="[Status Final]" Member="Status_Final" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="[Assigned Pathologist]" Member="Assigned_Pathologist" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Case_Details_Portal" Method="SP_PP_Get_Case_Details_Portal">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Case_Details_PortalResult">
+      <Column Name="Patient" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="RefMD" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stprc_clntx_pathologist_open_orders" Method="stprc_clntx_pathologist_open_orders">
+    <Parameter Name="path_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="stprc_clntx_pathologist_open_ordersResult">
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="source" Type="System.String" DbType="VarChar(130)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="priority" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="lab_department" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="lab_dept_worklist" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ordered_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ordered_by" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="completed_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="completed_by" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="bill" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="service_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Case_Results" Method="SP_PP_Get_Case_Results">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Case_ResultsResult">
+      <Column Name="Header" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Result" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Gross_desc" Method="SP_PP_Get_Gross_desc">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Gross_descResult">
+      <Column Name="GrossDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stprc_clntx_slide_labels_by_slide_id" Method="stprc_clntx_slide_labels_by_slide_id">
+    <Parameter Name="slide_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="stprc_clntx_slide_labels_by_slide_idResult">
+      <Column Name="order_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="case_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="accession_no_sans_check_char" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="consult_accession_no" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="specimen_desc" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="procedure_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="procedure_label_desc" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="specimen_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="block_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="slide_label" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="case_type" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="institution" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="pt_name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="encoded_material_id" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="rec_type" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="acc_catg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="specimen_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="facility_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="facility_name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="spec_coll_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="spec_recv_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="case_created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="order_created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="patient_last_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="patient_first_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="rev_center_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="level_info" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="" Member="Column1" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stprc_clntx_blocks_batch_id" Method="stprc_clntx_blocks_batch_id">
+    <Parameter Name="blocks" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="batch_id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Path_Assigned_Cases" Method="SP_PP_Get_Path_Assigned_Cases">
+    <Parameter Name="Path_ID" Parameter="path_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Path_Assigned_CasesResult">
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Accession Number]" Member="Accession_Number" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Case Type]" Member="Case_Type" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[Currently Assigned to]" Member="Currently_Assigned_to" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Case Status]" Member="Case_Status" Type="System.String" DbType="VarChar(86)" CanBeNull="true" />
+      <Column Name="hold" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="patient_name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="MRN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="refmd_name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Primary_Specimen" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_clntx_get_level_info" Method="fn_clntx_get_level_info" IsComposable="true">
+    <Parameter Name="start_level" Type="System.Int32" DbType="Int" />
+    <Parameter Name="total_levels" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_set_acc_order_status_web" Method="stprc_clntx_set_acc_order_status_web">
+    <Parameter Name="acc_order_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="personnel_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_pp_image_insert" Method="stprc_clntx_pp_image_insert">
+    <Parameter Name="case_image_scanner_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="pp_user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="include_in_report" Type="System.Char" DbType="Char(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Rules">
+  <DataContextMoniker Name="/RulesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d6b351a4-938b-442f-b558-66b6a6c23642" absoluteBounds="3.5, 4.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/RulesDataContext/Rule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe3727d0-e52a-452d-bca6-5863fd4268b0" absoluteBounds="3.515, 5.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e606307-bbee-4d1e-ab4e-2344c946a414" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/RulesDataContext/Value" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13b6b40b-8dab-4f39-8132-f266bdacc0e6" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cbe2ae9-09ee-4554-b169-d24aee892a69" absoluteBounds="6.25, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/RulesDataContext/Rule_Value" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9f25e26-5453-43f8-9735-6c8a865e87e6" absoluteBounds="6.265, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b14c21bd-a996-47e3-beae-fd5b62783bc5" absoluteBounds="0.75, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/RulesDataContext/Value_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df720507-343a-4841-80b2-511ed6b914d5" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.79890055338542); (7.25 : 5.79890055338542); (7.25 : 2.19399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RulesDataContext/Rule/Rule_Rule_Value" />
+      <nodes>
+        <classShapeMoniker Id="d6b351a4-938b-442f-b558-66b6a6c23642" />
+        <classShapeMoniker Id="1cbe2ae9-09ee-4554-b169-d24aee892a69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.59699625651042); (6.25 : 1.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RulesDataContext/Value/Value_Rule_Value" />
+      <nodes>
+        <classShapeMoniker Id="0e606307-bbee-4d1e-ab4e-2344c946a414" />
+        <classShapeMoniker Id="1cbe2ae9-09ee-4554-b169-d24aee892a69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.5 : 1.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RulesDataContext/Value_Type/Value_Type_Value" />
+      <nodes>
+        <classShapeMoniker Id="b14c21bd-a996-47e3-beae-fd5b62783bc5" />
+        <classShapeMoniker Id="0e606307-bbee-4d1e-ab4e-2344c946a414" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

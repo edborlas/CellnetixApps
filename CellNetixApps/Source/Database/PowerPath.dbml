@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PowerPath_prod" Class="PowerPathDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=cel-lis-001;Initial Catalog=PowerPath_prod;Persist Security Info=True;User ID=sa" SettingsObjectName="CellNetixApps.Properties.Settings" SettingsPropertyName="PowerPath_95_TestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.accession_2" Member="accession_2s">
+    <Type Name="accession_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="patient_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="patient_mrn_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="refmd_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="delivery_loc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="acc_type_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="acc_catg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="rev_ctr_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="NOT_USED" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="billing_entity_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="party_to_bill" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="svc_plc" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="client_billacct_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fee_sched_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="fin_class_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ok_to_bill" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="case_priority" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="current_status_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hold_status_reason_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="status_final" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="data_tmplt_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rpt_tmplt_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="dirty_rpt_header" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="imported_case" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="autoset_corrltn_types" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="can_load_results" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="primary_specimen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="results_classification_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="primary_diag_finding" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="patient_age" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="patient_visit_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="facility_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_number" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="reason_for_deletion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="patient_billing_account_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="row_version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="check_char" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="accession_no_sans_check_char" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="accession_no_with_check_char_pattern" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="hpv_results_classification_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rpt_related_clinical_results" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="accession_2_acc_slide" Member="acc_slides" ThisKey="id" OtherKey="acc_id" Type="acc_slide" />
+      <Association Name="accession_2_acc_specimen" Member="acc_specimens" ThisKey="id" OtherKey="acc_id" Type="acc_specimen" />
+      <Association Name="accession_2_acc_image" Member="acc_images" ThisKey="id" OtherKey="acc_id" Type="acc_image" />
+      <Association Name="accession_2_acc_note" Member="acc_notes" ThisKey="id" OtherKey="acc_id" Type="acc_note" />
+      <Association Name="accession_2_acc_charge" Member="acc_charges" ThisKey="id" OtherKey="acc_id" Type="acc_charge" />
+      <Association Name="accession_2_acc_icd9" Member="acc_icd9s" ThisKey="id" OtherKey="acc_id" Type="acc_icd9" />
+      <Association Name="accession_2_acc_order" Member="acc_orders" ThisKey="id" OtherKey="acc_id" Type="acc_order" />
+      <Association Name="accession_2_acc_report" Member="acc_reports" ThisKey="id" OtherKey="acc_id" Type="acc_report" />
+      <Association Name="accession_2_acc_block" Member="acc_blocks" ThisKey="id" OtherKey="acc_id" Type="acc_block" />
+      <Association Name="accession_2_acc_lock" Member="acc_lock" ThisKey="id" OtherKey="acc_id" Type="acc_lock" Cardinality="One" />
+      <Association Name="acc_type_accession_2" Member="acc_type" ThisKey="acc_type_id" OtherKey="id" Type="acc_type" IsForeignKey="true" />
+      <Association Name="path_rpt_tmplt_accession_2" Member="path_rpt_tmplt" ThisKey="rpt_tmplt_id" OtherKey="id" Type="path_rpt_tmplt" IsForeignKey="true" />
+      <Association Name="facility_accession_2" Member="facility" ThisKey="facility_id" OtherKey="id" Type="facility" IsForeignKey="true" />
+      <Association Name="patient_mrn_2_accession_2" Member="patient_mrn_2" ThisKey="patient_mrn_id" OtherKey="id" Type="patient_mrn_2" IsForeignKey="true" />
+      <Association Name="refmd_2_accession_2" Member="refmd_2" ThisKey="refmd_id" OtherKey="id" Type="refmd_2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_slide" Member="acc_slides">
+    <Type Name="acc_slide">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="acc_specimen_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="acc_order_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="slide_no" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="slide_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fixation_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="start_level" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="total_levels" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="consult_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="acc_material_tracking_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="print_dist_label_material_color_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="acc_slide_acc_image" Member="acc_images" ThisKey="id" OtherKey="acc_slide_id" Type="acc_image" />
+      <Association Name="accession_2_acc_slide" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" />
+      <Association Name="acc_specimen_acc_slide" Member="acc_specimen" ThisKey="acc_specimen_id" OtherKey="id" Type="acc_specimen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_specimen" Member="acc_specimens">
+    <Type Name="acc_specimen">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="container" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="specimen_category_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="specimen_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="collection_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="recv_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="include_in_rpt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="billable" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="topography_code_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coll_proc_code_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="billing_catg_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="consult_accession_no" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="icd9_topography_ind" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="acc_material_tracking_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fixation_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="tmplt_profile_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_code_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="master_acc_specimen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tmplt_specimen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="spec_rpt_tmplt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="illustration_section_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_final_description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="last_final_collection_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="acc_specimen_acc_slide" Member="acc_slides" ThisKey="id" OtherKey="acc_specimen_id" Type="acc_slide" />
+      <Association Name="acc_specimen_acc_image" Member="acc_images" ThisKey="id" OtherKey="acc_specimen_id" Type="acc_image" />
+      <Association Name="acc_specimen_acc_order" Member="acc_orders" ThisKey="id" OtherKey="acc_specimen_id" Type="acc_order" />
+      <Association Name="acc_specimen_acc_block" Member="acc_blocks" ThisKey="id" OtherKey="acc_specimen_id" Type="acc_block" />
+      <Association Name="accession_2_acc_specimen" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="medical_code_acc_specimen" Member="medical_code1" ThisKey="coll_proc_code_id" OtherKey="id" Type="medical_code" IsForeignKey="true" />
+      <Association Name="medical_code_acc_specimen1" Member="medical_code" ThisKey="topography_code_id" OtherKey="id" Type="medical_code" IsForeignKey="true" />
+      <Association Name="service_code_acc_specimen" Member="service_code" ThisKey="service_code_id" OtherKey="id" Type="service_code" IsForeignKey="true" />
+      <Association Name="tmplt_specimen_acc_specimen" Member="tmplt_specimen" ThisKey="tmplt_specimen_id" OtherKey="id" Type="tmplt_specimen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_image" Member="acc_images">
+    <Type Name="acc_image">
+      <Column Name="acc_image_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="image_type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data_format" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="label" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="image_width" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="image_height" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="image_color_depth" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="image_thumbnail" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="notes" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="acc_specimen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="acc_slide_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="include_in_report" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="include_in_internet" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="row_version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="report_section_number" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="external_notes" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="specimen_results_enabled" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="source_filename" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="page_count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="include_as_attachment" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="sort_order" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="acc_parent_image_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="annotation" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Association Name="acc_slide_acc_image" Member="acc_slide" ThisKey="acc_slide_id" OtherKey="id" Type="acc_slide" IsForeignKey="true" />
+      <Association Name="acc_specimen_acc_image" Member="acc_specimen" ThisKey="acc_specimen_id" OtherKey="id" Type="acc_specimen" IsForeignKey="true" />
+      <Association Name="accession_2_acc_image" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_patient_2" Member="vw_patient_2s">
+    <Type Name="vw_patient_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="mid_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="gen_title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="home_addr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="work_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sex" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="race" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="Char(9)" CanBeNull="true" />
+      <Column Name="bad_debt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="marital_status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="student_status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="empt_status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="emplr_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_addr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="employee_id_number" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="deceased" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="deceased_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="created_by_adt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="home_street1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="home_street2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="home_city" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="home_state" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="home_postal_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="home_country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_street1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_street2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_city" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_state" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_postal_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="emplr_country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emplr_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="row_version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="patient_alternate_identifier" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="patient_enterprise_identifier" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="high_risk" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="high_risk_marked_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="high_risk_marked_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hr_abnormal_pap" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_abnormal_pap_marked_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hr_positive_hpv" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_positive_hpv_marked_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_note" Member="acc_notes">
+    <Type Name="acc_note">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="author_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="edit_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="view_privilege" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="topic" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="note_text" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="fulltext_index_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="entry_class" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="accession_2_acc_note" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_type" Member="acc_types">
+    <Type Name="acc_type">
+      <Column Name="id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="category" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="data_tmplt_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="dflt_rev_ctr_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="process_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="imported_case_type" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="rpt_tmplt_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="results_entry_method" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="dflt_specimen_profile_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dflt_order_profile_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dflt_ok_to_bill" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="facility_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dflt_fee_sched_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="acc_type_accession_2" Member="accession_2s" ThisKey="id" OtherKey="acc_type_id" Type="accession_2" />
+      <Association Name="path_rpt_tmplt_acc_type" Member="path_rpt_tmplt" ThisKey="rpt_tmplt_id" OtherKey="id" Type="path_rpt_tmplt" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="facility_acc_type" Member="facility" ThisKey="facility_id" OtherKey="id" Type="facility" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.personnel_2" Member="personnel_2s">
+    <Type Name="personnel_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="mid_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="gen_title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="system_access" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="login_name" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="persnl_class_id" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="dept_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="Char(9)" CanBeNull="true" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="emp_start_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="emp_end_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="home_addr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="work_addr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="work_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="work_fax_no" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="pager_no" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="system_admin" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="password_last_changed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="password_never_expires" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="must_change_password" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="show_no_backup_message" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="third_party_access" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(60)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="personnel_2_acc_order" Member="acc_orders1" ThisKey="id" OtherKey="completed_by_id" Type="acc_order" />
+      <Association Name="personnel_2_acc_order1" Member="acc_orders" ThisKey="id" OtherKey="ordered_by_id" Type="acc_order" />
+      <Association Name="personnel_2_acc_lock" Member="acc_locks" ThisKey="id" OtherKey="personnel_id" Type="acc_lock" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_charges" Member="acc_charges">
+    <Type Name="acc_charge">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rec_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="rec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_code_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="billing_code" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="comp_type" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="unit_charge" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="units_of_service" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="icd9_indicator" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="xfer_billing_to" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="xfer_billing_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sort_ord" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ar_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="acc_charge_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="billing_pathologist_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_code_modifier_code1" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="service_code_modifier_code2" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="service_code_modifier_code3" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="service_code_modifier_code4" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="xfer_billing_service_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="xfer_billing_client_billing_account_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xfer_billing_patient_billing_account_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xfer_billing_fee_sched_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="accession_2_acc_charge" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="service_code_acc_charge" Member="service_code" ThisKey="service_code_id" OtherKey="id" Type="service_code" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_icd9" Member="acc_icd9s">
+    <Type Name="acc_icd9">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="icd9_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sort_ord" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="entry_method" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="use_code" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="accession_2_acc_icd9" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="medical_code_acc_icd9" Member="medical_code" ThisKey="icd9_id" OtherKey="id" Type="medical_code" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.medical_code" Member="medical_codes">
+    <Type Name="medical_code">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pneumonic" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mnemonic" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="acc_catg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="dx_node_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="use_topography_ind" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="medical_code_acc_specimen" Member="acc_specimens1" ThisKey="id" OtherKey="coll_proc_code_id" Type="acc_specimen" />
+      <Association Name="medical_code_acc_specimen1" Member="acc_specimens" ThisKey="id" OtherKey="topography_code_id" Type="acc_specimen" />
+      <Association Name="medical_code_acc_icd9" Member="acc_icd9s" ThisKey="id" OtherKey="icd9_id" Type="acc_icd9" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lab_procedure" Member="lab_procedures">
+    <Type Name="lab_procedure">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="label_description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="preparation_catg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="billable" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="service_code_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="acc_categories" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="billing_catg_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="slide_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="needs_pos_control" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="needs_neg_control" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="dflt_billing_role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hpv" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="lab_procedure_acc_order" Member="acc_orders" ThisKey="id" OtherKey="procedure_id" Type="acc_order" />
+      <Association Name="service_code_lab_procedure" Member="service_code" ThisKey="service_code_id" OtherKey="id" Type="service_code" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_order" Member="acc_orders">
+    <Type Name="acc_order">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="acc_specimen_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="procedure_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="source_rec_type" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="source_rec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="billable" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="billing_category_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="service_code_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="priority" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ordered_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="completed_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="completed_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="billing_acct_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lab_dept_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="procedure_methodology_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="instructions" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="lab_note" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="neg_control_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pos_control_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lab_dept_worklist_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="accession_2_acc_order" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" />
+      <Association Name="acc_specimen_acc_order" Member="acc_specimen" ThisKey="acc_specimen_id" OtherKey="id" Type="acc_specimen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="personnel_2_acc_order" Member="personnel_21" ThisKey="completed_by_id" OtherKey="id" Type="personnel_2" IsForeignKey="true" />
+      <Association Name="personnel_2_acc_order1" Member="personnel_2" ThisKey="ordered_by_id" OtherKey="id" Type="personnel_2" IsForeignKey="true" />
+      <Association Name="lab_procedure_acc_order" Member="lab_procedure" ThisKey="procedure_id" OtherKey="id" Type="lab_procedure" IsForeignKey="true" />
+      <Association Name="service_code_acc_order" Member="service_code" ThisKey="service_code_id" OtherKey="id" Type="service_code" IsForeignKey="true" />
+      <Association Name="lab_dept_acc_order" Member="lab_dept" ThisKey="lab_dept_id" OtherKey="id" Type="lab_dept" IsForeignKey="true" />
+      <Association Name="lab_dept_worklist_acc_order" Member="lab_dept_worklist" ThisKey="lab_dept_worklist_id" OtherKey="id" Type="lab_dept_worklist" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.service_code" Member="service_codes">
+    <Type Name="service_code">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="service_catg_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="service_code_acc_specimen" Member="acc_specimens" ThisKey="id" OtherKey="service_code_id" Type="acc_specimen" />
+      <Association Name="service_code_acc_charge" Member="acc_charges" ThisKey="id" OtherKey="service_code_id" Type="acc_charge" />
+      <Association Name="service_code_lab_procedure" Member="lab_procedures" ThisKey="id" OtherKey="service_code_id" Type="lab_procedure" />
+      <Association Name="service_code_acc_order" Member="acc_orders" ThisKey="id" OtherKey="service_code_id" Type="acc_order" />
+      <Association Name="service_code_tmplt_specimen" Member="tmplt_specimens" ThisKey="id" OtherKey="service_code_id" Type="tmplt_specimen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.path_rpt_tmplt" Member="path_rpt_tmplts">
+    <Type Name="path_rpt_tmplt">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_catg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="rtf_text" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="addendum_file_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="template_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="addendum_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="clin_result_font_size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clin_disclaimer_font_size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clin_disclaimer_text" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="path_rpt_tmplt_accession_2" Member="accession_2s" ThisKey="id" OtherKey="rpt_tmplt_id" Type="accession_2" />
+      <Association Name="path_rpt_tmplt_acc_type" Member="acc_types" ThisKey="id" OtherKey="rpt_tmplt_id" Type="acc_type" />
+    </Type>
+  </Table>
+  <Table Name="dbo.path_rpt_heading" Member="path_rpt_headings">
+    <Type Name="path_rpt_heading">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rpt_tmplt_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="heading_catg_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sort_ord" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="rpt_marker" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="include_in_history" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.notes_topic" Member="notes_topics">
+    <Type Name="notes_topic">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="topic" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_report" Member="acc_reports">
+    <Type Name="acc_report">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="report" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="report_text" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="lock_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="report_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="accession_2_acc_report" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_block" Member="acc_blocks">
+    <Type Name="acc_block">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="acc_specimen_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="acc_order_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="fixation_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="pieces" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="consult_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="acc_material_tracking_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="print_status" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="print_dist_label_material_color_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="embedding_instruction_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="material_storage_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="amp_transfer_container_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="accession_2_acc_block" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" />
+      <Association Name="acc_specimen_acc_block" Member="acc_specimen" ThisKey="acc_specimen_id" OtherKey="id" Type="acc_specimen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="embedding_instruction_acc_block" Member="embedding_instruction" ThisKey="embedding_instruction_id" OtherKey="id" Type="embedding_instruction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.embedding_instruction" Member="embedding_instructions">
+    <Type Name="embedding_instruction">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="embedding_instruction_acc_block" Member="acc_blocks" ThisKey="id" OtherKey="embedding_instruction_id" Type="acc_block" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tmplt_profile" Member="tmplt_profiles">
+    <Type Name="tmplt_profile">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="acc_categories" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="spec_rpt_tmplt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clinical_display_option" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="clinical_display_days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clinical_display_occurance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_lock" Member="acc_locks">
+    <Type Name="acc_lock">
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="spid" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="login_time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="personnel_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="accession_2_acc_lock" Member="accession_2" ThisKey="acc_id" OtherKey="id" Type="accession_2" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="personnel_2_acc_lock" Member="personnel_2" ThisKey="personnel_id" OtherKey="id" Type="personnel_2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.facility" Member="facilities">
+    <Type Name="facility">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="addr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="contact_name" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="phone1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="phone2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fax_no" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="dflt_lab_dept_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cassette_label_printing_enabled" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="dist_mw_label_format_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dist_label_material_color_default_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dist_label_material_color_rush_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mgmt_report_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cassette_dis_device_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cassette_mgmt_report_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cassette_dist_label_material_color_default_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cassette_dist_label_material_color_rush_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slide_dis_device_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slide_mgmt_report_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="slide_dist_label_material_color_default_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slide_dist_label_material_color_rush_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="facility_accession_2" Member="accession_2s" ThisKey="id" OtherKey="facility_id" Type="accession_2" />
+      <Association Name="facility_acc_type" Member="acc_types" ThisKey="id" OtherKey="facility_id" Type="acc_type" />
+      <Association Name="facility_lab_dept" Member="lab_depts" ThisKey="id" OtherKey="facility_id" Type="lab_dept" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lab_dept" Member="lab_depts">
+    <Type Name="lab_dept">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="facility_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dflt_lab_dept_worklist_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="mgmt_report_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dis_device_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="lab_dept_acc_order" Member="acc_orders" ThisKey="id" OtherKey="lab_dept_id" Type="acc_order" />
+      <Association Name="lab_dept_lab_dept_worklist" Member="lab_dept_worklists" ThisKey="id" OtherKey="lab_dept_id" Type="lab_dept_worklist" />
+      <Association Name="facility_lab_dept" Member="facility" ThisKey="facility_id" OtherKey="id" Type="facility" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lab_dept_worklist" Member="lab_dept_worklists">
+    <Type Name="lab_dept_worklist">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lab_dept_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="mgmt_report_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dis_device_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="lab_dept_worklist_acc_order" Member="acc_orders" ThisKey="id" OtherKey="lab_dept_worklist_id" Type="acc_order" />
+      <Association Name="lab_dept_lab_dept_worklist" Member="lab_dept" ThisKey="lab_dept_id" OtherKey="id" Type="lab_dept" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_order_request" Member="vw_order_requests">
+    <Type Name="vw_order_request">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="order_number" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sending_application" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="sending_facility" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="control_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="uservice_code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="uservice_description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="patient_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patient_billing_account_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patient_mrn_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="patient_visit_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.patient_mrn_2" Member="patient_mrn_2s">
+    <Type Name="patient_mrn_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="patient_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="med_rec_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="medical_facility_id" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="system_generated" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="created_by_adt" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="row_version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="med_rec_no_uniqueness_waiver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="patient_mrn_2_accession_2" Member="accession_2s" ThisKey="id" OtherKey="patient_mrn_id" Type="accession_2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.refmd_2" Member="refmd_2s">
+    <Type Name="refmd_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="mid_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="gen_title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="specialty_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(60)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="autonotify" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="autonotify_client_identifier" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="refmd_2_accession_2" Member="accession_2s" ThisKey="id" OtherKey="refmd_id" Type="accession_2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tmplt_specimen" Member="tmplt_specimens">
+    <Type Name="tmplt_specimen">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tmplt_profile_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="specimen_category_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="billable" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="include_in_report" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="topography_code_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coll_proc_code_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="icd9_topography_ind" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fixation_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="sort_ord" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="service_code_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="specimen_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="illustration_section_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="discard_days_past_final" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tmplt_specimen_acc_specimen" Member="acc_specimens" ThisKey="id" OtherKey="tmplt_specimen_id" Type="acc_specimen" />
+      <Association Name="service_code_tmplt_specimen" Member="service_code" ThisKey="service_code_id" OtherKey="id" Type="service_code" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.stp_Get_Case_Materials_List" Method="stp_Get_Case_Materials_List" IsComposable="true">
+    <Parameter Name="CaseID" Parameter="caseID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.stp_progress_case_to_final" Method="stp_progress_case_to_final">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="last_completed_when" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="new_step_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="assign_to" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_blocks_batch_id" Method="stprc_clntx_blocks_batch_id">
+    <Parameter Name="blocks" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="batch_id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_blocks_logic" Method="stprc_clntx_path_add_blocks_logic">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="specimen_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="block_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lab_proc_code" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="pieces" Type="System.Int32" DbType="Int" />
+    <Parameter Name="action" Type="System.Char" DbType="Char(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_charges_logic" Method="stprc_clntx_path_add_charges_logic">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cpt_code" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="personnel_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="action" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="pk_acc_charges_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_icd9_logic" Method="stprc_clntx_path_add_icd9_logic">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="icd9_code" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="action" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="pk_icd_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_specimen_desc_logic" Method="stprc_clntx_path_add_specimen_desc_logic">
+    <Parameter Name="specimen_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="specimen_description" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_progress_status" Method="stprc_clntx_progress_status">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_update_emb_instructions" Method="stprc_clntx_update_emb_instructions">
+    <Parameter Name="embedding_instruction_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="block_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_slides_logic" Method="stprc_clntx_path_add_slides_logic">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="block_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lab_proc_code" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="start_levels" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="total_levels" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="slide_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="slide_no" Type="System.Int32" DbType="Int" />
+    <Parameter Name="action" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="stprc_clntx_path_add_slides_logicResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stp_lab_worklist" Method="stp_lab_worklist">
+    <Parameter Name="LabDeptWorklistID" Parameter="labDeptWorklistID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="CompletionStatus" Parameter="completionStatus" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="stp_lab_worklistResult">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="acc_specimen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="procedure_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="source_rec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="source_rec_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="priority" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="priority_sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ordered_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ordered_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="completed_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="completed_by_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="instructions" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="embedding_instructions" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="specimen_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="specimen_description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="specimen_sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lab_procedure_code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="lab_procedure_description" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="source_block_label" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="source_slide_no" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="source_material_label" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="source_material_sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patient" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="ref_md" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="ordering_user" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="completed_by" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="needs_positive_control" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="needs_negative_control" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="control_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="control_result" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stprc_clntx_path_add_note_logic" Method="stprc_clntx_path_add_note_logic">
+    <Parameter Name="acc_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="author_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="topic" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="note" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="action" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="pk_note_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="stprc_clntx_path_add_note_logicResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

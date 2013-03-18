@@ -1,0 +1,1042 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CELLAPPS" Class="CellappsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=cel-sql-011;Initial Catalog=CELLAPPS;Persist Security Info=True;User ID=sa" SettingsObjectName="CellNetixApps.Properties.Settings" SettingsPropertyName="CELLAPPSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Temp_Specimens" Member="Temp_Specimens">
+    <Type Name="Temp_Specimen">
+      <Column Name="Specimen_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Specimen_Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Specimen_Label" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="time_stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Item_Temp_Specimen" Member="Item" ThisKey="Item_ID" OtherKey="Item_ID" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Accession_Activities" Member="Accession_Activities">
+    <Type Name="Accession_Activity">
+      <Column Name="Accession_Activity_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CIF_Pickup_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CIF_Dropoff_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Courier_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Intake_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Intaker_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Patient_Verify_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Patient_Verifer_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Case_Verify_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Case_Verifier_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gross_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Grosser_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Embedd_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Embedder_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cut_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cutter_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Distribute_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Distributer_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gen_Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(201)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Full_Name" Type="System.String" DbType="NVarChar(60)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="User_Type_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Default_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Division_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PowerPath_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Initials" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Work_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Employee_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Start_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="End_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Bio" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PIN" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Image_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Photo_Location" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BinaryPassword" Type="System.Data.Linq.Binary" DbType="Binary(16)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LC_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Hours" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Pager" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Home_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SuperVisor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Update_Issue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Badge_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Slide_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_User" Member="User2" ThisKey="User_ID" OtherKey="User_ID" Type="User" Cardinality="One" />
+      <Association Name="User_Ticket_Log" Member="Ticket_Logs" ThisKey="User_ID" OtherKey="Assigned_To_ID" Type="Ticket_Log" />
+      <Association Name="User_Ticket_Log1" Member="Ticket_Logs1" ThisKey="User_ID" OtherKey="Responsible_ID" Type="Ticket_Log" />
+      <Association Name="User_Ticket_Log2" Member="Ticket_Logs2" ThisKey="User_ID" OtherKey="Created_By_ID" Type="Ticket_Log" />
+      <Association Name="User_Ticket_Log3" Member="Ticket_Logs3" ThisKey="User_ID" OtherKey="Modified_By_ID" Type="Ticket_Log" />
+      <Association Name="User_Ticket_Stage" Member="Ticket_Stages" ThisKey="User_ID" OtherKey="Owner_ID" Type="Ticket_Stage" />
+      <Association Name="User_Ticket_Source" Member="Ticket_Sources" ThisKey="User_ID" OtherKey="Owner_ID" Type="Ticket_Source" />
+      <Association Name="User_User_Printer" Member="User_Printers" ThisKey="User_ID" OtherKey="User_ID" Type="User_Printer" />
+      <Association Name="User_Machine_Handheld" Member="Machine_Handhelds" ThisKey="User_ID" OtherKey="Default_User_ID" Type="Machine_Handheld" />
+      <Association Name="User_User_Role" Member="User_Roles" ThisKey="User_ID" OtherKey="User_ID" Type="User_Role" />
+      <Association Name="User_Phone_Number" Member="Phone_Numbers" ThisKey="User_ID" OtherKey="User_ID" Type="Phone_Number" />
+      <Association Name="User_Accession_Log" Member="Accession_Logs" ThisKey="User_ID" OtherKey="User_ID" Type="Accession_Log" />
+      <Association Name="User_Conference" Member="Conferences" ThisKey="User_ID" OtherKey="User_ID" Type="Conference" />
+      <Association Name="User_User_Status" Member="User_Status" ThisKey="User_ID" OtherKey="User_ID" Type="User_Status" />
+      <Association Name="User_Organization" Member="Organizations" ThisKey="User_ID" OtherKey="Primary_Retention_ID" Type="Organization" />
+      <Association Name="User_Organization1" Member="Organizations1" ThisKey="User_ID" OtherKey="Primary_Salesperson_ID" Type="Organization" />
+      <Association Name="User_Organization2" Member="Organizations2" ThisKey="User_ID" OtherKey="Primary_Internal_ID" Type="Organization" />
+      <Association Name="User_Organization3" Member="Organizations3" ThisKey="User_ID" OtherKey="Sales_Commission_Due_To" Type="Organization" />
+      <Association Name="User_Organization4" Member="Organizations4" ThisKey="User_ID" OtherKey="Retention_Commission_Due_To" Type="Organization" />
+      <Association Name="User_Ticket" Member="Tickets" ThisKey="User_ID" OtherKey="Created_By_ID" Type="Ticket" />
+      <Association Name="User_Ticket1" Member="Tickets1" ThisKey="User_ID" OtherKey="Responsible_ID" Type="Ticket" />
+      <Association Name="User_Ticket2" Member="Tickets2" ThisKey="User_ID" OtherKey="Assigned__To_ID" Type="Ticket" />
+      <Association Name="User_Ticket3" Member="Tickets3" ThisKey="User_ID" OtherKey="Modified_By_ID" Type="Ticket" />
+      <Association Name="User_Temp_Slide" Member="Temp_Slides" ThisKey="User_ID" OtherKey="Assigned_To_ID" Type="Temp_Slide" />
+      <Association Name="User_Temp_Slide1" Member="Temp_Slides1" ThisKey="User_ID" OtherKey="Ordered_By_ID" Type="Temp_Slide" />
+      <Association Name="User_Ticket_Group_User" Member="Ticket_Group_Users" ThisKey="User_ID" OtherKey="User_ID" Type="Ticket_Group_User" />
+      <Association Name="User_User" Member="User1" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Location_User" Member="Location" ThisKey="Default_Location_ID" OtherKey="Location_ID" Type="Location" IsForeignKey="true" />
+      <Association Name="Location_User1" Member="Location1" ThisKey="Slide_Location_ID" OtherKey="Location_ID" Type="Location" IsForeignKey="true" />
+      <Association Name="User_Type_User" Member="User_Type" ThisKey="User_Type_ID" OtherKey="User_Type_ID" Type="User_Type" IsForeignKey="true" />
+      <Association Name="Division_User" Member="Division" ThisKey="Division_ID" OtherKey="Division_ID" Type="Division" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Items" Member="Items">
+    <Type Name="Item">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Item_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="External_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Assigned_To_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Current_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Last_IGI_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Item_Temp_Specimen" Member="Temp_Specimens" ThisKey="Item_ID" OtherKey="Item_ID" Type="Temp_Specimen" />
+      <Association Name="Item_Temp_Slide" Member="Temp_Slides" ThisKey="Item_ID" OtherKey="Item_ID" Type="Temp_Slide" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item_Groups" Member="Item_Groups">
+    <Type Name="Item_Group">
+      <Column Name="Item_Group_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Parent_Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Item_Group_Item_Log" Member="Item_Logs" ThisKey="Item_Group_ID" OtherKey="Item_Group_ID" Type="Item_Log" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item_Log" Member="Item_Logs">
+    <Type Name="Item_Log">
+      <Column Name="Item_Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_Status_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Item_Group_Item_Log" Member="Item_Group" ThisKey="Item_Group_ID" OtherKey="Item_Group_ID" Type="Item_Group" IsForeignKey="true" />
+      <Association Name="Location_Item_Log" Member="Location" ThisKey="Location_ID" OtherKey="Location_ID" Type="Location" IsForeignKey="true" />
+      <Association Name="Machine_Item_Log" Member="Machine" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Log" Member="Ticket_Logs">
+    <Type Name="Ticket_Log">
+      <Column Name="Ticket_Log_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Error_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Source_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Error_Classification_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Status_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Details" Type="System.String" DbType="NVarChar(2500) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolution_Details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Assigned_To_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Responsible_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date_Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modified_By_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Role_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_Ticket_Log" Member="User" ThisKey="Assigned_To_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket_Log1" Member="User1" ThisKey="Responsible_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket_Log2" Member="User2" ThisKey="Created_By_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket_Log3" Member="User3" ThisKey="Modified_By_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Ticket_Stage_Ticket_Log" Member="Ticket_Stage" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket_Stage" IsForeignKey="true" />
+      <Association Name="Ticket_Statuse_Ticket_Log" Member="Ticket_Statuse" ThisKey="Ticket_Status_ID" OtherKey="Ticket_Status_ID" Type="Ticket_Statuse" IsForeignKey="true" />
+      <Association Name="Ticket_Error_Ticket_Log" Member="Ticket_Error" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Error" IsForeignKey="true" />
+      <Association Name="Ticket_Error_Classification_Ticket_Log" Member="Ticket_Error_Classification" ThisKey="Ticket_Error_Classification_ID" OtherKey="Ticket_Error_Classification_ID" Type="Ticket_Error_Classification" IsForeignKey="true" />
+      <Association Name="Ticket_Ticket_Log" Member="Ticket" ThisKey="Ticket_ID" OtherKey="Ticket_ID" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Stages" Member="Ticket_Stages">
+    <Type Name="Ticket_Stage">
+      <Column Name="Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sort_Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Stage_Ticket_Log" Member="Ticket_Logs" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket_Log" />
+      <Association Name="Ticket_Stage_Ticket_Error" Member="Ticket_Errors" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket_Error" />
+      <Association Name="Ticket_Stage_Ticket" Member="Tickets" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket" />
+      <Association Name="User_Ticket_Stage" Member="User" ThisKey="Owner_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Statuses" Member="Ticket_Statuses">
+    <Type Name="Ticket_Statuse">
+      <Column Name="Ticket_Status_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Statuse_Ticket_Log" Member="Ticket_Logs" ThisKey="Ticket_Status_ID" OtherKey="Ticket_Status_ID" Type="Ticket_Log" />
+      <Association Name="Ticket_Statuse_Ticket" Member="Tickets" ThisKey="Ticket_Status_ID" OtherKey="Ticket_Status_ID" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Sources" Member="Ticket_Sources">
+    <Type Name="Ticket_Source">
+      <Column Name="Ticket_Source_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Ticket_Source_Ticket_Error" Member="Ticket_Errors" ThisKey="Ticket_Source_ID" OtherKey="Ticket_Source_ID" Type="Ticket_Error" />
+      <Association Name="Ticket_Source_Ticket" Member="Tickets" ThisKey="Ticket_Source_ID" OtherKey="Ticket_Source_ID" Type="Ticket" />
+      <Association Name="User_Ticket_Source" Member="User" ThisKey="Owner_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Errors" Member="Ticket_Errors">
+    <Type Name="Ticket_Error">
+      <Column Name="Ticket_Error_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Source_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Default_Ticket_Error_Classification_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Require_Case_Note" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Require_Resolution_Center" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ticket_Error_Note_Template_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Ticket_Error_Ticket_Log" Member="Ticket_Logs" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Log" />
+      <Association Name="Ticket_Error_Ticket_Error_Attribute" Member="Ticket_Error_Attributes" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Error_Attribute" />
+      <Association Name="Ticket_Error_Ticket_Error_Detail" Member="Ticket_Error_Details" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Error_Detail" />
+      <Association Name="Ticket_Source_Ticket_Error" Member="Ticket_Source" ThisKey="Ticket_Source_ID" OtherKey="Ticket_Source_ID" Type="Ticket_Source" IsForeignKey="true" />
+      <Association Name="Ticket_Stage_Ticket_Error" Member="Ticket_Stage" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket_Stage" IsForeignKey="true" />
+      <Association Name="Ticket_Error_Classification_Ticket_Error" Member="Ticket_Error_Classification" ThisKey="Default_Ticket_Error_Classification_ID" OtherKey="Ticket_Error_Classification_ID" Type="Ticket_Error_Classification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Locations" Member="Locations">
+    <Type Name="Location">
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Organization_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Abbreviation" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Location_User" Member="Users" ThisKey="Location_ID" OtherKey="Default_Location_ID" Type="User" />
+      <Association Name="Location_User1" Member="Users1" ThisKey="Location_ID" OtherKey="Slide_Location_ID" Type="User" />
+      <Association Name="Location_Item_Log" Member="Item_Logs" ThisKey="Location_ID" OtherKey="Location_ID" Type="Item_Log" />
+      <Association Name="Location_Location_Attribute" Member="Location_Attributes" ThisKey="Location_ID" OtherKey="Location_ID" Type="Location_Attribute" />
+      <Association Name="Location_Item_Waypoint" Member="Item_Waypoints" ThisKey="Location_ID" OtherKey="Location_ID" Type="Item_Waypoint" />
+      <Association Name="Organization_Location" Member="Organization" ThisKey="Organization_ID" OtherKey="Organization_ID" Type="Organization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STS_Overrides" Member="STS_Overrides">
+    <Type Name="STS_Override">
+      <Column Name="STS_Override_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location_Attributes" Member="Location_Attributes">
+    <Type Name="Location_Attribute">
+      <Column Name="Location_Attribute_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_Attribute_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Sort_Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Location_Location_Attribute" Member="Location" ThisKey="Location_ID" OtherKey="Location_ID" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Printers" Member="Printers">
+    <Type Name="Printer">
+      <Column Name="Printer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Printer_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UNC" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Printer_User_Printer" Member="User_Printers" ThisKey="Printer_ID" OtherKey="Printer_ID" Type="User_Printer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Printers" Member="User_Printers">
+    <Type Name="User_Printer">
+      <Column Name="User_Printer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Printer_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Default_Printer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Printer_User_Printer" Member="Printer" ThisKey="Printer_ID" OtherKey="Printer_ID" Type="Printer" IsForeignKey="true" />
+      <Association Name="User_User_Printer" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Machine_Handhelds" Member="Machine_Handhelds">
+    <Type Name="Machine_Handheld">
+      <Column Name="Machine_Handheld_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Device_ID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Default_User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Registration_ID" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Asset_Number_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Machine_Handheld" Member="User" ThisKey="Default_User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Machine_Machine_Handheld" Member="Machine" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Machine_Attributes" Member="Machine_Attributes">
+    <Type Name="Machine_Attribute">
+      <Column Name="Machine_Attribute_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Machine_Attribute_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Machine_Attribute_Type_Machine_Attribute" Member="Machine_Attribute_Type" ThisKey="Machine_Attribute_Type_ID" OtherKey="Machine_Attribute_Type_ID" Type="Machine_Attribute_Type" IsForeignKey="true" />
+      <Association Name="Machine_Machine_Attribute" Member="Machine" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Machine_Attribute_Types" Member="Machine_Attribute_Types">
+    <Type Name="Machine_Attribute_Type">
+      <Column Name="Machine_Attribute_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Machine_Attribute_Type_Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Machine_Attribute_Type_Machine_Attribute" Member="Machine_Attributes" ThisKey="Machine_Attribute_Type_ID" OtherKey="Machine_Attribute_Type_ID" Type="Machine_Attribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Machines" Member="Machines">
+    <Type Name="Machine">
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Machine_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Citrix" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Kiosk_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Auto_Login" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Printer_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Machine_Item_Log" Member="Item_Logs" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Item_Log" />
+      <Association Name="Machine_Machine_Handheld" Member="Machine_Handhelds" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine_Handheld" />
+      <Association Name="Machine_Machine_Attribute" Member="Machine_Attributes" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine_Attribute" />
+      <Association Name="Machine_Website" Member="Websites" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Website" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Error_Attributes" Member="Ticket_Error_Attributes">
+    <Type Name="Ticket_Error_Attribute">
+      <Column Name="Ticket_Error_Attribute_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ticket_Error_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Attribute_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Error_Ticket_Error_Attribute" Member="Ticket_Error" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Error" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Crystal_Reports" Member="Crystal_Reports">
+    <Type Name="Crystal_Report">
+      <Column Name="Crystal_Report_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Report_Location" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Database_Server" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Database_Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Database_User" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Database_Password" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Paramater1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Paramater2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Paramater3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Paramater4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SP_Name1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SP_Name2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SP_Name3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SP_Name4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Friendly_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Crystal_Report_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Show_In_Dropdown" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Local_Report" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Template_Categories" Member="Template_Categories">
+    <Type Name="Template_Category">
+      <Column Name="Template_Category_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Template_Category_Template" Member="Templates" ThisKey="Template_Category_ID" OtherKey="Template_Category_ID" Type="Template" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Template_Types" Member="Template_Types">
+    <Type Name="Template_Type">
+      <Column Name="Template_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Template_Type_Template_Data" Member="Template_Datas" ThisKey="Template_Type_ID" OtherKey="Template_Type_ID" Type="Template_Data" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Template_Data" Member="Template_Datas">
+    <Type Name="Template_Data">
+      <Column Name="Template_Data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Template_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Template_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Template_Type_Template_Data" Member="Template_Type" ThisKey="Template_Type_ID" OtherKey="Template_Type_ID" Type="Template_Type" IsForeignKey="true" />
+      <Association Name="Template_Template_Data" Member="Template" ThisKey="Template_ID" OtherKey="Template_ID" Type="Template" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Templates" Member="Templates">
+    <Type Name="Template">
+      <Column Name="Template_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Template_Category_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Template_Template_Data" Member="Template_Datas" ThisKey="Template_ID" OtherKey="Template_ID" Type="Template_Data" />
+      <Association Name="Template_Category_Template" Member="Template_Category" ThisKey="Template_Category_ID" OtherKey="Template_Category_ID" Type="Template_Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Extensions" Member="Extensions">
+    <Type Name="Extension">
+      <Column Name="Extension_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Division_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Position/Note]" Member="Position_Note" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Division_Extension" Member="Division" ThisKey="Division_ID" OtherKey="Division_ID" Type="Division" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Types" Member="User_Types">
+    <Type Name="User_Type">
+      <Column Name="User_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Type_User" Member="Users" ThisKey="User_Type_ID" OtherKey="User_Type_ID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Websites" Member="Websites">
+    <Type Name="Website">
+      <Column Name="Website_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Default_Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Website_Website_Page" Member="Website_Pages" ThisKey="Website_ID" OtherKey="Website_ID" Type="Website_Page" />
+      <Association Name="Machine_Website" Member="Machine" ThisKey="Machine_ID" OtherKey="Machine_ID" Type="Machine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Website_Pages" Member="Website_Pages">
+    <Type Name="Website_Page">
+      <Column Name="Website_Page_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Website_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Website_Website_Page" Member="Website" ThisKey="Website_ID" OtherKey="Website_ID" Type="Website" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Roles" Member="User_Roles">
+    <Type Name="User_Role">
+      <Column Name="UserRole_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Role_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_User_Role" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Role_User_Role" Member="Role" ThisKey="Role_ID" OtherKey="Role_ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Role_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User_Role" Member="User_Roles" ThisKey="Role_ID" OtherKey="Role_ID" Type="User_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Control_Types" Member="Form_Control_Types">
+    <Type Name="Form_Control_Type">
+      <Column Name="Form_Control_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Form_Control_Type_Form_Control" Member="Form_Controls" ThisKey="Form_Control_Type_ID" OtherKey="Form_Control_Type_ID" Type="Form_Control" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Operators" Member="Form_Operators">
+    <Type Name="Form_Operator">
+      <Column Name="Form_Operator_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Form_Operator_Form_Control" Member="Form_Controls" ThisKey="Form_Operator_ID" OtherKey="Form_Operator_ID" Type="Form_Control" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Controls" Member="Form_Controls">
+    <Type Name="Form_Control">
+      <Column Name="Form_Control_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Field_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Display_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Location_X" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location_Y" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Font_Size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Focus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sort_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Form_Control_Type_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Form_Font_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Form_Operator_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Form_Control_Parent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Form_Control_Form_Control" Member="Form_Controls" ThisKey="Form_Control_ID" OtherKey="Form_Control_Parent_ID" Type="Form_Control" />
+      <Association Name="Form_Control_Type_Form_Control" Member="Form_Control_Type" ThisKey="Form_Control_Type_ID" OtherKey="Form_Control_Type_ID" Type="Form_Control_Type" IsForeignKey="true" />
+      <Association Name="Form_Control_Form_Control" Member="Form_Control1" ThisKey="Form_Control_Parent_ID" OtherKey="Form_Control_ID" Type="Form_Control" IsForeignKey="true" />
+      <Association Name="Form_Operator_Form_Control" Member="Form_Operator" ThisKey="Form_Operator_ID" OtherKey="Form_Operator_ID" Type="Form_Operator" IsForeignKey="true" />
+      <Association Name="Form_Font_Form_Control" Member="Form_Font" ThisKey="Form_Font_ID" OtherKey="Form_Font_ID" Type="Form_Font" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Fonts" Member="Form_Fonts">
+    <Type Name="Form_Font">
+      <Column Name="Form_Font_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Form_Font_Form_Control" Member="Form_Controls" ThisKey="Form_Font_ID" OtherKey="Form_Font_ID" Type="Form_Control" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Error_Classifications" Member="Ticket_Error_Classifications">
+    <Type Name="Ticket_Error_Classification">
+      <Column Name="Ticket_Error_Classification_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Error_Classification_Ticket_Log" Member="Ticket_Logs" ThisKey="Ticket_Error_Classification_ID" OtherKey="Ticket_Error_Classification_ID" Type="Ticket_Log" />
+      <Association Name="Ticket_Error_Classification_Ticket_Error" Member="Ticket_Errors" ThisKey="Ticket_Error_Classification_ID" OtherKey="Default_Ticket_Error_Classification_ID" Type="Ticket_Error" />
+      <Association Name="Ticket_Error_Classification_Ticket" Member="Tickets" ThisKey="Ticket_Error_Classification_ID" OtherKey="Ticket_Error_Classification_ID" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phone_Numbers" Member="Phone_Numbers">
+    <Type Name="Phone_Number">
+      <Column Name="Phone_Number_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Work_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Home_Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="User_Phone_Number" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Accession_Log" Member="Accession_Logs">
+    <Type Name="Accession_Log">
+      <Column Name="Accession_Log_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_Field_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_Status_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Report_Date" Type="System.String" DbType="VarChar(30)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Accession_Escalation_Reason_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Acc_Order_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Accession_Log" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Conferences" Member="Conferences">
+    <Type Name="Conference">
+      <Column Name="Conference_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Folder" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Conference_Conference_Image" Member="Conference_Images" ThisKey="Conference_ID" OtherKey="Conference_ID" Type="Conference_Image" />
+      <Association Name="User_Conference" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Divisions" Member="Divisions">
+    <Type Name="Division">
+      <Column Name="Division_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lab_Use" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Supervisor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Division_User" Member="Users" ThisKey="Division_ID" OtherKey="Division_ID" Type="User" />
+      <Association Name="Division_Extension" Member="Extensions" ThisKey="Division_ID" OtherKey="Division_ID" Type="Extension" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Conference_Images" Member="Conference_Images">
+    <Type Name="Conference_Image">
+      <Column Name="Conference_Image_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Conference_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Slide_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="File_Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Full_Path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Sort_Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Conference_Conference_Image" Member="Conference" ThisKey="Conference_ID" OtherKey="Conference_ID" Type="Conference" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Error_Details" Member="Ticket_Error_Details">
+    <Type Name="Ticket_Error_Detail">
+      <Column Name="Ticket_Error_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ticket_Detail_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Ticket_Error_Ticket_Error_Detail" Member="Ticket_Error" ThisKey="Ticket_Error_ID" OtherKey="Ticket_Error_ID" Type="Ticket_Error" IsForeignKey="true" />
+      <Association Name="Ticket_Detail_Ticket_Error_Detail" Member="Ticket_Detail" ThisKey="Ticket_Detail_ID" OtherKey="Ticket_Detail_ID" Type="Ticket_Detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Details" Member="Ticket_Details">
+    <Type Name="Ticket_Detail">
+      <Column Name="Ticket_Detail_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Detail_Ticket_Error_Detail" Member="Ticket_Error_Details" ThisKey="Ticket_Detail_ID" OtherKey="Ticket_Detail_ID" Type="Ticket_Error_Detail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Status" Member="User_Status">
+    <Type Name="User_Status">
+      <Column Name="User_Status_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Idle_Time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IP_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="User_User_Status" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Telepathology" Member="Telepathologies">
+    <Type Name="Telepathology">
+      <Column Name="Telepathology_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Request_User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Attendee_User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Connection_String" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Note_Topics" Member="Note_Topics">
+    <Type Name="Note_Topic">
+      <Column Name="Note_Topic_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Slide_Distribution_Manual_Scan" Member="Slide_Distribution_Manual_Scans">
+    <Type Name="Slide_Distribution_Manual_Scan">
+      <Column Name="Slide_Scan_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Slide_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Scanned" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Manual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Machine_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DataMatrix" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item_Waypoints" Member="Item_Waypoints">
+    <Type Name="Item_Waypoint">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Waypoint_Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Location_Item_Waypoint" Member="Location" ThisKey="Location_ID" OtherKey="Location_ID" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Organizations" Member="Organizations">
+    <Type Name="Organization">
+      <Column Name="Organization_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Organization_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Courier_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entity_Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Refmd_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Mail_Stop" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Fax_No" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Data.Linq.Binary" DbType="Binary(1)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Street1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Street2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Postal_Code" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Rating_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Primary_Change_Factor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Secondary_Change_Factor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Likelyhood_of_Sale_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Current_Lab_Vendor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Current_Path_Vendor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Territory_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Primary_Salesperson_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Primary_Retention_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Organization_Delivery_Method_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Default_Rev_Center_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Overview" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Practice_Management_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberOfProviders" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Organization_Specialty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_Overview" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Featured" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Testimonial" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Default_Rev_Center" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Primary_Internal_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sales_Commission_Due_To" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Retention_Commission_Due_To" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Import_Flag" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Sales_Call" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Last_Retention_Call" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Organization_Location" Member="Locations" ThisKey="Organization_ID" OtherKey="Organization_ID" Type="Location" />
+      <Association Name="User_Organization" Member="User" ThisKey="Primary_Retention_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Organization1" Member="User1" ThisKey="Primary_Salesperson_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Organization2" Member="User2" ThisKey="Primary_Internal_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Organization3" Member="User3" ThisKey="Sales_Commission_Due_To" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Organization4" Member="User4" ThisKey="Retention_Commission_Due_To" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Detail_Log" Member="Ticket_Detail_Logs">
+    <Type Name="Ticket_Detail_Log">
+      <Column Name="Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ticket_Detail_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tickets" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Ticket_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ticket_Stage_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Error_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Source_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Error_Classification_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Status_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Details" Type="System.String" DbType="NVarChar(2500) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolution_Details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="[Assigned _To_ID]" Member="Assigned__To_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Responsible_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date_Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modified_By_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="QIR_Document" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Lab_Issue_Error_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Urgent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Ticket_Log" Member="Ticket_Logs" ThisKey="Ticket_ID" OtherKey="Ticket_ID" Type="Ticket_Log" />
+      <Association Name="Ticket_Ticket" Member="Ticket2" ThisKey="Ticket_ID" OtherKey="Ticket_ID" Type="Ticket" Cardinality="One" />
+      <Association Name="Ticket_Error_Classification_Ticket" Member="Ticket_Error_Classification" ThisKey="Ticket_Error_Classification_ID" OtherKey="Ticket_Error_Classification_ID" Type="Ticket_Error_Classification" IsForeignKey="true" />
+      <Association Name="Ticket_Source_Ticket" Member="Ticket_Source" ThisKey="Ticket_Source_ID" OtherKey="Ticket_Source_ID" Type="Ticket_Source" IsForeignKey="true" />
+      <Association Name="Ticket_Stage_Ticket" Member="Ticket_Stage" ThisKey="Ticket_Stage_ID" OtherKey="Ticket_Stage_ID" Type="Ticket_Stage" IsForeignKey="true" />
+      <Association Name="Ticket_Statuse_Ticket" Member="Ticket_Statuse" ThisKey="Ticket_Status_ID" OtherKey="Ticket_Status_ID" Type="Ticket_Statuse" IsForeignKey="true" />
+      <Association Name="Ticket_Ticket" Member="Ticket1" ThisKey="Ticket_ID" OtherKey="Ticket_ID" Type="Ticket" IsForeignKey="true" />
+      <Association Name="User_Ticket" Member="User" ThisKey="Created_By_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket1" Member="User1" ThisKey="Responsible_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket2" Member="User2" ThisKey="Assigned__To_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket3" Member="User3" ThisKey="Modified_By_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Temp_Slides" Member="Temp_Slides">
+    <Type Name="Temp_Slide">
+      <Column Name="Slide_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Slide_Number" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Procedure_Name" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Specimen_Name" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Case_Final" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="time_stamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Assigned_To_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ordered_By_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Instructions" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status_Final" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Item_Temp_Slide" Member="Item" ThisKey="Item_ID" OtherKey="Item_ID" Type="Item" IsForeignKey="true" />
+      <Association Name="User_Temp_Slide" Member="User" ThisKey="Assigned_To_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Temp_Slide1" Member="User1" ThisKey="Ordered_By_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Print_Template_Variables" Member="Print_Template_Variables">
+    <Type Name="Print_Template_Variable">
+      <Column Name="Print_Template_Variable_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Print_Template_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Alt_Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Print_Templates" Member="Print_Templates">
+    <Type Name="Print_Template">
+      <Column Name="Print_Template_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UNC" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Parameter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Job_Path" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Group_Users" Member="Ticket_Group_Users">
+    <Type Name="Ticket_Group_User">
+      <Column Name="Ticket_Group_User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ticket_Group_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Ticket_Group_User" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Ticket_Group_Ticket_Group_User" Member="Ticket_Group" ThisKey="Ticket_Group_ID" OtherKey="Ticket_Group_ID" Type="Ticket_Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Groups" Member="Ticket_Groups">
+    <Type Name="Ticket_Group">
+      <Column Name="Ticket_Group_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Ticket_Group_Ticket_Group_User" Member="Ticket_Group_Users" ThisKey="Ticket_Group_ID" OtherKey="Ticket_Group_ID" Type="Ticket_Group_User" />
+    </Type>
+  </Table>
+  <Function Name="dbo.FN_Get_Latest_Historical_Slide_Status" Method="FN_Get_Latest_Historical_Slide_Status" IsComposable="true">
+    <Parameter Name="Slide_ID" Parameter="slide_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Case_Images" Method="SP_Insert_Case_Images">
+    <Parameter Name="Case_Number" Parameter="case_Number" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Image_Content" Parameter="image_Content" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="image_thumbnail" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="case_image_type_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pp_label" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="slide_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Case_Image_log" Method="SP_Insert_Case_Image_log">
+    <Parameter Name="Case_number" Parameter="case_number" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Created_By_ID" Parameter="created_By_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status_ID" Parameter="status_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Scanner_ID" Parameter="scanner_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Case_Image_ID" Parameter="case_Image_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertItem_Log" Method="SP_InsertItem_Log">
+    <Parameter Name="Item_Group_ID" Parameter="item_Group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Item_Status_ID" Parameter="item_Status_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Location_ID" Parameter="location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Machine_ID" Parameter="machine_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FN_PP_Get_Assigned_To_ID_slideID" Method="FN_PP_Get_Assigned_To_ID_slideID" IsComposable="true">
+    <Parameter Name="Slide_ID" Parameter="slide_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Get_Slide_Counts_In_Tray" Method="SP_Get_Slide_Counts_In_Tray">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_Slide_Counts_In_TrayResult">
+      <Column Name="accession_no" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="slides_on_tray" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slides_in_case" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Insert_User_Printers" Method="SP_Insert_User_Printers">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Printer_ID" Parameter="printer_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Delete_Slides_From_Tray" Method="SP_Delete_Slides_From_Tray">
+    <Parameter Name="Item_Group_ID" Parameter="item_Group_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FN_Get_Item_ID" Method="FN_Get_Item_ID" IsComposable="true">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Item_Type_ID" Parameter="item_Type_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FN_Get_Item_Display_Name_ItemID" Method="FN_Get_Item_Display_Name_ItemID" IsComposable="true">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Item_Group_Items" Method="SP_Insert_Item_Group_Items">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Item_Group_ID" Parameter="item_Group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Item_Group_Item_Type_ID" Parameter="item_Group_Item_Type_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Added_By_ID" Parameter="added_By_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Item_Group_Items2" Method="SP_Insert_Item_Group_Items2">
+    <Parameter Name="iParent" Type="System.Int32" DbType="Int" />
+    <Parameter Name="iChild" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Added_By_ID" Parameter="added_By_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertItem_LogWithNote" Method="SP_InsertItem_LogWithNote">
+    <Parameter Name="Item_Group_ID" Parameter="item_Group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Item_Status_ID" Parameter="item_Status_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Location_ID" Parameter="location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Machine_ID" Parameter="machine_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="time" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Shipment" Method="SP_Insert_Shipment">
+    <Parameter Name="Start_Location_ID" Parameter="start_Location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="End_Location_ID" Parameter="end_Location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Machine_ID" Parameter="machine_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Insert_Activity_Log" Method="SP_Insert_Activity_Log">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Insert_Activity_LogResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_Pathologist_Location_From_Calix_Today" Method="SP_Get_Pathologist_Location_From_Calix_Today">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_Pathologist_Location_From_Calix_TodayResult">
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Slide_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bench_Day_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bench_Location_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Percent_Available" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Destination" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Destination_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Path_Name" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_Shipments_Assigned_To_ID" Method="SP_Get_Shipments_Assigned_To_ID">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Start_Location_ID" Parameter="start_Location_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_Shipments_Assigned_To_IDResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Manifest" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Destination" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EncodeBarcode" Method="EncodeBarcode" IsComposable="true">
+    <Parameter Name="Value" Parameter="value" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TypeIdentifier" Parameter="typeIdentifier" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SP_Crystal_Manifest_Part3" Method="SP_Crystal_Manifest_Part3">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Crystal_Manifest_Part3Result">
+      <Column Name="Item_ID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Destination" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="abbreviation" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="[Created By]" Member="Created_By" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="[Assigned To]" Member="Assigned_To" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="[Created On]" Member="Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SrcLocation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DestLocation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iCount" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="BC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_All_Slide_History_List" Method="SP_Get_All_Slide_History_List">
+    <Parameter Name="slideList" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_CreateCIForTray" Method="SP_CreateCIForTray">
+    <Parameter Name="Item_Type_ID" Parameter="item_Type_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Location_ID" Parameter="location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Machine_ID" Parameter="machine_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Get_STS_Activity_Log" Method="SP_Get_STS_Activity_Log">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_STS_Activity_LogResult">
+      <Column Name="Item" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Dest" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="[Delete]" Member="Delete" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_Pathologist_Deliveries" Method="SP_Get_Pathologist_Deliveries">
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_Pathologist_DeliveriesResult">
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Slide_Number" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Procedure_Name" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="time_stamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status_final" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Complete_Shipment_Part_1" Method="SP_Complete_Shipment_Part_1">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Location_ID" Parameter="location_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Machine_ID" Parameter="machine_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Update_Item_Assigned_To_ID" Method="SP_Update_Item_Assigned_To_ID">
+    <Parameter Name="Item_ID" Parameter="item_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Assigned_To_ID" Parameter="assigned_To_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Send_Email" Method="SP_Send_Email">
+    <Parameter Name="To" Parameter="to" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Order_history" Method="SP_PP_Get_Order_history">
+    <Parameter Name="acc_order_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_PP_Get_Order_historyResult">
+      <Column Name="[Accession No]" Member="Accession_No" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Slide" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="Time_Stamp" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PP_Get_Order_history_AccessionNo" Method="SP_PP_Get_Order_history_AccessionNo">
+    <Parameter Name="accession_no" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="SP_PP_Get_Order_history_AccessionNoResult">
+      <Column Name="[Accession No]" Member="Accession_No" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Slide" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="Time_Stamp" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Worklist" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_Conference_Images" Method="SP_Get_Conference_Images">
+    <Parameter Name="Conference_ID" Parameter="conference_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Get_Conference_ImagesResult">
+      <Column Name="Conference_Image_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Accession_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="File_Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Full_Path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Slide" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Sort_Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Get_User_Status" Method="SP_Get_User_Status">
+    <ElementType Name="SP_Get_User_StatusResult">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ts" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

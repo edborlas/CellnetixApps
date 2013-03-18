@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Rules" Class="RulesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=cel-sql-011;Initial Catalog=Rules;Persist Security Info=True;User ID=sa" SettingsObjectName="CellNetixApps.Properties.Settings" SettingsPropertyName="RulesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Rule]" Member="Rules">
+    <Type Name="Rule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Organization" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Rev_Center" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Fee_Schedule" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Specimen" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Case_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RefMD" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="Rule_Rule_Value" Member="Rule_Values" ThisKey="ID" OtherKey="Rule_ID" Type="Rule_Value" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Values]" Member="Values">
+    <Type Name="Value">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Value_Rule_Value" Member="Rule_Values" ThisKey="ID" OtherKey="Value_ID" Type="Rule_Value" />
+      <Association Name="Value_Type_Value" Member="Value_Type" ThisKey="Value_Type_ID" OtherKey="ID" Type="Value_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rule_Values" Member="Rule_Values">
+    <Type Name="Rule_Value">
+      <Column Name="Value_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rule_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Rule_Rule_Value" Member="Rule" ThisKey="Rule_ID" OtherKey="ID" Type="Rule" IsForeignKey="true" />
+      <Association Name="Value_Rule_Value" Member="Value" ThisKey="Value_ID" OtherKey="ID" Type="Value" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Value_Types" Member="Value_Types">
+    <Type Name="Value_Type">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Value_Type_Value" Member="Values" ThisKey="ID" OtherKey="Value_Type_ID" Type="Value" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_Rules" Method="SP_Rules">
+    <Parameter Name="Organization" Parameter="organization" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Facility" Parameter="facility" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Rev_Center" Parameter="rev_Center" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Fee_Schedule" Parameter="fee_Schedule" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Specimen" Parameter="specimen" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Case_Type" Parameter="case_Type" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="RefMD" Parameter="refMD" Type="System.String" DbType="NVarChar(15)" />
+    <ElementType Name="SP_RulesResult">
+      <Column Name="rule_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="value_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="value_type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
